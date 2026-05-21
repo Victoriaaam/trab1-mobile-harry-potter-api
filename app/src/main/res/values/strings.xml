@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Trab1 Harry Potter API</string>
+    <string name="titulo_tela_principal">Harry Potter API</string>
+    <string name="subtitulo_tela_principal">Escolha uma das opções abaixo: .</string>
+    <string name="buscar_personagem_por_id">Buscar personagem por ID</string>
+    <string name="buscar_professor">Buscar professor</string>
+    <string name="listar_estudantes_por_casa">Listar estudantes por casa</string>
+    <string name="ver_feiticos">Ver feitiços</string>
+    <string name="sair_do_app">Sair do app</string>
+    <string name="titulo_buscar_personagem">Buscar personagem por ID</string>
+    <string name="titulo_buscar_professor">Buscar professor</string>
+    <string name="titulo_estudantes_casa">Estudantes por casa</string>
+    <string name="titulo_feiticos">Feiticos</string>
+    <string name="titulo_detalhes_feitico">Detalhes do feitiço</string>
+    <string name="tela_em_construcao">Texto</string>
+</resources>

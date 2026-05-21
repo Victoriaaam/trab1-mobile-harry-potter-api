@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="24dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/titulo_tela_principal"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="@string/subtitulo_tela_principal"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btnBuscarPersonagem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/buscar_personagem_por_id" />
+
+    <Button
+        android:id="@+id/btnBuscarProfessor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/buscar_professor" />
+
+    <Button
+        android:id="@+id/btnEstudantesCasa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/listar_estudantes_por_casa" />
+
+    <Button
+        android:id="@+id/btnFeiticos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ver_feiticos" />
+
+    <Button
+        android:id="@+id/btnSair"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sair_do_app" />
+
+</LinearLayout>
