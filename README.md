@@ -4,9 +4,9 @@ Aplicativo Android desenvolvido para consultar a HP-API usando corrotinas e web 
 
 ## Integrantes
 
-- Nome 1
-- Nome 2
-- Nome 3
+- Vitória Laís Souza dos Santos
+- 
+- 
 
 ## Funcionalidades
 
