@@ -22,7 +22,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:hint="Digite o ID do personagem"
+        android:hint="@string/hint_id_personagem"
+        android:autofillHints="none"
         android:inputType="text" />
 
     <Button
@@ -30,7 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Pesquisar" />
+        android:text="@string/label_pesquisar" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -52,6 +53,7 @@
                 android:layout_width="200dp"
                 android:layout_height="250dp"
                 android:scaleType="centerCrop"
+                android:contentDescription="@string/titulo_buscar_personagem"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <TextView

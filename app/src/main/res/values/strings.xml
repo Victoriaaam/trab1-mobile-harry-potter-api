@@ -12,5 +12,17 @@
     <string name="titulo_estudantes_casa">Estudantes por casa</string>
     <string name="titulo_feiticos">Feiticos</string>
     <string name="titulo_detalhes_feitico">Detalhes do feitiço</string>
-    <string name="tela_em_construcao">Texto</string>
+    <string name="hint_id_personagem">Digite o ID do personagem (UUID)</string>
+    <string name="hint_nome_professor">Nome do professor</string>
+    <string name="label_pesquisar">Pesquisar</string>
+    <string name="label_especie">Espécie: %1$s</string>
+    <string name="label_casa">Casa: %1$s</string>
+    <string name="label_nomes_alternativos">Nomes alternativos: %1$s</string>
+    <string name="casa_gryffindor">Gryffindor</string>
+    <string name="casa_slytherin">Slytherin</string>
+    <string name="casa_hufflepuff">Hufflepuff</string>
+    <string name="casa_ravenclaw">Ravenclaw</string>
+    <string name="msg_erro_busca">Erro ao buscar: %1$s</string>
+    <string name="msg_nao_encontrado">Não encontrado</string>
+    <string name="msg_informe_campo">Por favor, preencha o campo de busca</string>
 </resources>

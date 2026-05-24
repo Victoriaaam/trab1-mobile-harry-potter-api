@@ -28,32 +28,32 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Gryf"
-            android:textSize="12sp" />
+            android:text="@string/casa_gryffindor"
+            android:textSize="10sp" />
 
         <RadioButton
             android:id="@+id/rbSlytherin"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Slyt"
-            android:textSize="12sp" />
+            android:text="@string/casa_slytherin"
+            android:textSize="10sp" />
 
         <RadioButton
             android:id="@+id/rbHufflepuff"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Huff"
-            android:textSize="12sp" />
+            android:text="@string/casa_hufflepuff"
+            android:textSize="10sp" />
 
         <RadioButton
             android:id="@+id/rbRavenclaw"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Rave"
-            android:textSize="12sp" />
+            android:text="@string/casa_ravenclaw"
+            android:textSize="10sp" />
     </RadioGroup>
 
     <ProgressBar

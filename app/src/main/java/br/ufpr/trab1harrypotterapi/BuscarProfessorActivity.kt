@@ -43,7 +43,7 @@ class BuscarProfessorActivity : AppCompatActivity() {
             if (nome.isNotEmpty()) {
                 buscarProfessor(nome, progressBar, layoutResultado, ivProfessor, tvNome, tvNomesAlternativos, tvEspecie, tvCasa)
             } else {
-                Toast.makeText(this, "Informe o nome do professor", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.msg_informe_campo), Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -68,9 +68,9 @@ class BuscarProfessorActivity : AppCompatActivity() {
 
                 if (professor != null) {
                     tvNome.text = professor.name
-                    tvNomesAlternativos.text = "Nomes alternativos: ${professor.alternateNames?.joinToString(", ") ?: "N/A"}"
-                    tvEspecie.text = "Espécie: ${professor.species ?: "N/A"}"
-                    tvCasa.text = "Casa: ${professor.house ?: "N/A"}"
+                    tvNomesAlternativos.text = getString(R.string.label_nomes_alternativos, professor.alternateNames?.joinToString(", ") ?: "N/A")
+                    tvEspecie.text = getString(R.string.label_especie, professor.species ?: "N/A")
+                    tvCasa.text = getString(R.string.label_casa, professor.house ?: "N/A")
                     ivProfessor.load(professor.image) {
                         crossfade(true)
                         placeholder(android.R.drawable.ic_menu_gallery)
@@ -78,10 +78,10 @@ class BuscarProfessorActivity : AppCompatActivity() {
                     }
                     layoutResultado.visibility = View.VISIBLE
                 } else {
-                    Toast.makeText(this@BuscarProfessorActivity, "Professor não encontrado", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@BuscarProfessorActivity, getString(R.string.msg_nao_encontrado), Toast.LENGTH_SHORT).show()
                 }
             } catch (e: Exception) {
-                Toast.makeText(this@BuscarProfessorActivity, "Erro ao buscar: ${e.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@BuscarProfessorActivity, getString(R.string.msg_erro_busca, e.message), Toast.LENGTH_SHORT).show()
             } finally {
                 progressBar.visibility = View.GONE
             }

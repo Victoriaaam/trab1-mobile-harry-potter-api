@@ -42,7 +42,7 @@ class BuscarPersonagemActivity : AppCompatActivity() {
             if (id.isNotEmpty()) {
                 buscarPersonagem(id, progressBar, layoutResultado, ivPersonagem, tvNome, tvEspecie, tvCasa)
             } else {
-                Toast.makeText(this, "Informe um ID", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.msg_informe_campo), Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -65,8 +65,8 @@ class BuscarPersonagemActivity : AppCompatActivity() {
                 if (response.isNotEmpty()) {
                     val personagem = response[0]
                     tvNome.text = personagem.name
-                    tvEspecie.text = "Espécie: ${personagem.species ?: "N/A"}"
-                    tvCasa.text = "Casa: ${personagem.house ?: "N/A"}"
+                    tvEspecie.text = getString(R.string.label_especie, personagem.species ?: "N/A")
+                    tvCasa.text = getString(R.string.label_casa, personagem.house ?: "N/A")
                     ivPersonagem.load(personagem.image) {
                         crossfade(true)
                         placeholder(android.R.drawable.ic_menu_gallery)
@@ -74,10 +74,10 @@ class BuscarPersonagemActivity : AppCompatActivity() {
                     }
                     layoutResultado.visibility = View.VISIBLE
                 } else {
-                    Toast.makeText(this@BuscarPersonagemActivity, "Personagem não encontrado", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@BuscarPersonagemActivity, getString(R.string.msg_nao_encontrado), Toast.LENGTH_SHORT).show()
                 }
             } catch (e: Exception) {
-                Toast.makeText(this@BuscarPersonagemActivity, "Erro ao buscar: ${e.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@BuscarPersonagemActivity, getString(R.string.msg_erro_busca, e.message), Toast.LENGTH_SHORT).show()
             } finally {
                 progressBar.visibility = View.GONE
             }
