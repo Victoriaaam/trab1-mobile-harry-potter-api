@@ -4,12 +4,13 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
     android:padding="24dp"
     tools:context=".DetalhesFeiticoActivity">
 
     <TextView
+        android:id="@+id/tvTituloDetalhes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -18,10 +19,22 @@
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/tvNomeFeitico"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="32dp"
         android:gravity="center"
-        android:text="@string/tela_em_construcao" />
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:text="Expecto Patronum" />
+
+    <TextView
+        android:id="@+id/tvDescricaoFeitico"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:textSize="18sp"
+        tools:text="Creates a silver patronus to drive away Dementors." />
 
 </LinearLayout>

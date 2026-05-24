@@ -1,6 +1,7 @@
 package br.ufpr.trab1harrypotterapi
 
 import android.os.Bundle
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,5 +17,11 @@ class DetalhesFeiticoActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val nome = intent.getStringExtra("NOME") ?: "Desconhecido"
+        val descricao = intent.getStringExtra("DESCRICAO") ?: "Sem descrição disponível"
+
+        findViewById<TextView>(R.id.tvNomeFeitico).text = nome
+        findViewById<TextView>(R.id.tvDescricaoFeitico).text = descricao
     }
 }

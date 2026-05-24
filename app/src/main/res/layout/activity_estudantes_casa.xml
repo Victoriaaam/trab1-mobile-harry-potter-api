@@ -4,9 +4,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical"
-    android:padding="24dp"
+    android:padding="16dp"
     tools:context=".EstudantesCasaActivity">
 
     <TextView
@@ -17,11 +16,59 @@
         android:textSize="22sp"
         android:textStyle="bold" />
 
-    <TextView
+    <RadioGroup
+        android:id="@+id/rgCasas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbGryffindor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Gryf"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/rbSlytherin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Slyt"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/rbHufflepuff"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Huff"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/rbRavenclaw"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Rave"
+            android:textSize="12sp" />
+    </RadioGroup>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvEstudantes"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_marginTop="8dp"
-        android:gravity="center"
-        android:text="@string/tela_em_construcao" />
+        android:layout_weight="1"
+        tools:listitem="@layout/item_estudante" />
 
 </LinearLayout>
