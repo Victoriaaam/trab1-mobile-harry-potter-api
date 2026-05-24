@@ -17,11 +17,71 @@
         android:textSize="22sp"
         android:textStyle="bold" />
 
-    <TextView
+    <EditText
+        android:id="@+id/etIdPersonagem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Digite o ID do personagem"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/btnPesquisar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:gravity="center"
-        android:text="@string/tela_em_construcao" />
+        android:text="Pesquisar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/layoutResultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <ImageView
+                android:id="@+id/ivPersonagem"
+                android:layout_width="200dp"
+                android:layout_height="250dp"
+                android:scaleType="centerCrop"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/tvNome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="Harry Potter" />
+
+            <TextView
+                android:id="@+id/tvEspecie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Espécie: humana" />
+
+            <TextView
+                android:id="@+id/tvCasa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Casa: Gryffindor" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
 
 </LinearLayout>
