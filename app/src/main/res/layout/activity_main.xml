@@ -1,59 +1,282 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:padding="24dp"
+    android:background="@color/bg_primary"
+    android:fillViewport="true"
     tools:context=".MainActivity">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/titulo_tela_principal"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:orientation="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:gravity="center"
-        android:text="@string/subtitulo_tela_principal"
-        android:textSize="16sp" />
+        <!-- Hero Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_header_gradient"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="48dp"
+            android:paddingBottom="28dp"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp">
 
-    <Button
-        android:id="@+id/btnBuscarPersonagem"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/buscar_personagem_por_id" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⚡"
+                android:textSize="48sp" />
 
-    <Button
-        android:id="@+id/btnBuscarProfessor"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/buscar_professor" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/titulo_tela_principal"
+                android:textColor="@color/text_primary"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.05" />
 
-    <Button
-        android:id="@+id/btnEstudantesCasa"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/listar_estudantes_por_casa" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Wizarding World Explorer"
+                android:textColor="@color/text_muted"
+                android:textSize="13sp" />
 
-    <Button
-        android:id="@+id/btnFeiticos"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/ver_feiticos" />
+        </LinearLayout>
 
-    <Button
-        android:id="@+id/btnSair"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/sair_do_app" />
+        <!-- Section label -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="8dp"
+            android:text="EXPLORAR"
+            android:textColor="@color/text_muted"
+            android:textSize="10sp"
+            android:letterSpacing="0.12"
+            android:textStyle="bold" />
 
-</LinearLayout>
+        <!-- Linha 1: Personagem + Professor -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <!-- Buscar Personagem (Gryffindor) -->
+            <LinearLayout
+                android:id="@+id/btnBuscarPersonagem"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bg_card_gryffindor"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🧙"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/buscar_personagem_por_id"
+                    android:textColor="@color/gryffindor_text"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="Buscar por UUID"
+                    android:textColor="@color/gryffindor_text"
+                    android:textSize="11sp"
+                    android:alpha="0.7" />
+
+            </LinearLayout>
+
+            <!-- Buscar Professor (Slytherin) -->
+            <LinearLayout
+                android:id="@+id/btnBuscarProfessor"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="5dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bg_card_slytherin"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="👨‍🏫"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/buscar_professor"
+                    android:textColor="@color/slytherin_text"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="Buscar por nome"
+                    android:textColor="@color/slytherin_text"
+                    android:textSize="11sp"
+                    android:alpha="0.7" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Linha 2: Estudantes + Feitiços -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <!-- Estudantes por Casa (Ravenclaw) -->
+            <LinearLayout
+                android:id="@+id/btnEstudantesCasa"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bg_card_ravenclaw"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🏰"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/listar_estudantes_por_casa"
+                    android:textColor="@color/ravenclaw_text"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="Por casa de Hogwarts"
+                    android:textColor="@color/ravenclaw_text"
+                    android:textSize="11sp"
+                    android:alpha="0.7" />
+
+            </LinearLayout>
+
+            <!-- Feitiços (Hufflepuff) -->
+            <LinearLayout
+                android:id="@+id/btnFeiticos"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="5dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bg_card_hufflepuff"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="✨"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/ver_feiticos"
+                    android:textColor="@color/hufflepuff_text"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="Grimório completo"
+                    android:textColor="@color/hufflepuff_text"
+                    android:textSize="11sp"
+                    android:alpha="0.7" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Botão Sair (largura total, estilo diferente) -->
+        <LinearLayout
+            android:id="@+id/btnSair"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="28dp"
+            android:background="@drawable/bg_btn_exit"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="14dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🚪"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/sair_do_app"
+                android:textColor="@color/accent_purple_light"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

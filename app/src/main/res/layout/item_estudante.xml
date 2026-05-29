@@ -3,28 +3,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/bg_student_item"
     android:gravity="center_vertical"
     android:orientation="horizontal"
-    android:padding="8dp">
+    android:padding="12dp">
 
+    <!-- Foto do estudante -->
     <ImageView
         android:id="@+id/ivEstudante"
-        android:layout_width="60dp"
-        android:layout_height="80dp"
+        android:layout_width="52dp"
+        android:layout_height="68dp"
+        android:background="@color/bg_secondary"
         android:scaleType="centerCrop"
+        android:contentDescription="Foto do estudante"
         tools:srcCompat="@tools:sample/avatars" />
 
+    <!-- Informações -->
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_weight="1"
+        android:layout_marginStart="12dp"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/tvNomeEstudante"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
+            android:textColor="@color/text_primary"
+            android:textSize="15sp"
             android:textStyle="bold"
             tools:text="Harry Potter" />
 
@@ -32,6 +40,19 @@
             android:id="@+id/tvCasaEstudante"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:textColor="@color/text_muted"
+            android:textSize="12sp"
             tools:text="Gryffindor" />
+
     </LinearLayout>
+
+    <!-- Seta indicadora -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="›"
+        android:textColor="@color/accent_purple_dark"
+        android:textSize="22sp" />
+
 </LinearLayout>

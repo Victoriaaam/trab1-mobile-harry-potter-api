@@ -4,86 +4,223 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:background="@color/bg_primary"
     android:orientation="vertical"
-    android:padding="24dp"
     tools:context=".BuscarPersonagemActivity">
 
-    <TextView
+    <!-- Header -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/titulo_buscar_personagem"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+        android:background="@drawable/bg_header_gradient"
+        android:orientation="vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="48dp"
+        android:paddingBottom="20dp">
 
-    <EditText
-        android:id="@+id/etIdPersonagem"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/titulo_buscar_personagem"
+            android:textColor="@color/text_primary"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="Encontre personagens pelo UUID da HP-API"
+            android:textColor="@color/text_muted"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <!-- Search Area -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:hint="@string/hint_id_personagem"
-        android:autofillHints="none"
-        android:inputType="text" />
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <Button
-        android:id="@+id/btnPesquisar"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="ID DO PERSONAGEM"
+            android:textColor="@color/text_muted"
+            android:textSize="10sp"
+            android:letterSpacing="0.12"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etIdPersonagem"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_input"
+            android:hint="@string/hint_id_personagem"
+            android:textColorHint="@color/text_hint"
+            android:textColor="@color/text_primary"
+            android:textSize="13sp"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:autofillHints="none"
+            android:inputType="text" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnPesquisar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_btn_primary"
+            android:text="🔍  Pesquisar Personagem"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:stateListAnimator="@null" />
+
+    </LinearLayout>
+
+    <!-- ProgressBar (centralizado) -->
+    <ProgressBar
+        android:id="@+id/progressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/label_pesquisar" />
+        android:layout_gravity="center_horizontal"
+        android:indeterminateTint="@color/accent_purple"
+        android:visibility="gone" />
 
+    <!-- Resultado -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
         android:layout_weight="1">
 
         <LinearLayout
             android:id="@+id/layoutResultado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="24dp"
             android:visibility="gone"
             tools:visibility="visible">
 
-            <ImageView
-                android:id="@+id/ivPersonagem"
-                android:layout_width="200dp"
-                android:layout_height="250dp"
-                android:scaleType="centerCrop"
-                android:contentDescription="@string/titulo_buscar_personagem"
-                tools:srcCompat="@tools:sample/avatars" />
-
-            <TextView
-                android:id="@+id/tvNome"
-                android:layout_width="wrap_content"
+            <!-- Card resultado -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                tools:text="Harry Potter" />
+                android:background="@drawable/bg_card"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tvEspecie"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="Espécie: humana" />
+                <!-- Imagem do personagem -->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:background="@color/bg_secondary">
 
-            <TextView
-                android:id="@+id/tvCasa"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="Casa: Gryffindor" />
+                    <ImageView
+                        android:id="@+id/ivPersonagem"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="@string/titulo_buscar_personagem"
+                        tools:srcCompat="@tools:sample/avatars" />
+
+                </FrameLayout>
+
+                <!-- Informações -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tvNome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_primary"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        tools:text="Harry Potter" />
+
+                    <!-- Divider -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@color/bg_card_border" />
+
+                    <!-- Espécie e Casa lado a lado -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="ESPÉCIE"
+                                android:textColor="@color/text_muted"
+                                android:textSize="10sp"
+                                android:letterSpacing="0.1" />
+
+                            <TextView
+                                android:id="@+id/tvEspecie"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:textColor="@color/accent_purple_light"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                tools:text="Human" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="CASA"
+                                android:textColor="@color/text_muted"
+                                android:textSize="10sp"
+                                android:letterSpacing="0.1" />
+
+                            <TextView
+                                android:id="@+id/tvCasa"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:textColor="@color/gryffindor_text"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                tools:text="Gryffindor" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
-    </ScrollView>
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone" />
+    </ScrollView>
 
 </LinearLayout>

@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--  Base  -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <!--  Background escuro mágico  -->
+    <color name="bg_primary">#FF0D0D1A</color>
+    <color name="bg_secondary">#FF12102A</color>
+    <color name="bg_card">#FF1A1830</color>
+    <color name="bg_card_border">#FF2A2450</color>
+    <color name="bg_input">#FF1A1830</color>
+    <color name="bg_header">#FF1A1040</color>
+    <!--  Texto  -->
+    <color name="text_primary">#FFE8D5FF</color>
+    <color name="text_secondary">#FF9988BB</color>
+    <color name="text_muted">#FF6655AA</color>
+    <color name="text_hint">#FF5544AA</color>
+    <!--  Roxo mágico (acento principal)  -->
+    <color name="accent_purple">#FF7C4DFF</color>
+    <color name="accent_purple_dark">#FF4A2D8A</color>
+    <color name="accent_purple_light">#FFB8A0FF</color>
+    <!--  Casas  -->
+    <color name="gryffindor_bg">#FF1F0D0D</color>
+    <color name="gryffindor_border">#FF7A1F1F</color>
+    <color name="gryffindor_text">#FFF5B5B5</color>
+    <color name="slytherin_bg">#FF0D1A0D</color>
+    <color name="slytherin_border">#FF1F5C1F</color>
+    <color name="slytherin_text">#FFA8E6A8</color>
+    <color name="hufflepuff_bg">#FF1A1408</color>
+    <color name="hufflepuff_border">#FF7A5A0A</color>
+    <color name="hufflepuff_text">#FFF5D480</color>
+    <color name="ravenclaw_bg">#FF0D1020</color>
+    <color name="ravenclaw_border">#FF1F3F7A</color>
+    <color name="ravenclaw_text">#FFA8C8F5</color>
+    <!--  Status bar / nav bar  -->
+    <color name="status_bar">#FF0D0D1A</color>
 </resources>

@@ -1,40 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
-    android:orientation="vertical"
-    android:padding="24dp"
+    android:background="@color/bg_primary"
+    android:fillViewport="true"
     tools:context=".DetalhesFeiticoActivity">
 
-    <TextView
-        android:id="@+id/tvTituloDetalhes"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/titulo_detalhes_feitico"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tvNomeFeitico"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:gravity="center"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        tools:text="Expecto Patronum" />
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_header_gradient"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="56dp"
+            android:paddingBottom="28dp"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp">
 
-    <TextView
-        android:id="@+id/tvDescricaoFeitico"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:textSize="18sp"
-        tools:text="Creates a silver patronus to drive away Dementors." />
+            <!-- Ícone grande do feitiço -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="✨"
+                android:textSize="52sp" />
 
-</LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/titulo_detalhes_feitico"
+                android:textColor="@color/text_muted"
+                android:textSize="11sp"
+                android:letterSpacing="0.1"
+                android:textAllCaps="true" />
+
+        </LinearLayout>
+
+        <!-- Conteúdo do feitiço -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Card com nome e descrição -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_card"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Nome do feitiço -->
+                <TextView
+                    android:id="@+id/tvNomeFeitico"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/text_primary"
+                    android:textSize="26sp"
+                    android:textStyle="bold"
+                    tools:text="Expecto Patronum" />
+
+                <!-- Divider decorativo -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginBottom="14dp">
+
+                    <View
+                        android:layout_width="48dp"
+                        android:layout_height="2dp"
+                        android:background="@color/accent_purple_dark" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="⚡"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:layout_width="48dp"
+                        android:layout_height="2dp"
+                        android:background="@color/accent_purple_dark" />
+
+                </LinearLayout>
+
+                <!-- Descrição do feitiço -->
+                <TextView
+                    android:id="@+id/tvDescricaoFeitico"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:lineSpacingMultiplier="1.5"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="15sp"
+                    tools:text="Creates a silver patronus to drive away Dementors and Lethifolds." />
+
+            </LinearLayout>
+
+            <!-- Badge de tipo de feitiço -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="16dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_card"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📖"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="Feitiço catalogado na HP-API"
+                        android:textColor="@color/accent_purple_light"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

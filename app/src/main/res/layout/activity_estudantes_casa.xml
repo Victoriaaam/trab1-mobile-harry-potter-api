@@ -4,71 +4,155 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg_primary"
     android:orientation="vertical"
-    android:padding="16dp"
     tools:context=".EstudantesCasaActivity">
 
-    <TextView
+    <!-- Header -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/titulo_estudantes_casa"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+        android:background="@drawable/bg_header_gradient"
+        android:orientation="vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="48dp"
+        android:paddingBottom="20dp">
 
-    <RadioGroup
-        android:id="@+id/rgCasas"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/titulo_estudantes_casa"
+            android:textColor="@color/text_primary"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="Selecione uma casa de Hogwarts"
+            android:textColor="@color/text_muted"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <!-- Selector de casas (RadioGroup horizontal com scroll) -->
+    <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal">
+        android:scrollbars="none"
+        android:paddingTop="14dp"
+        android:paddingBottom="10dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
 
-        <RadioButton
-            android:id="@+id/rbGryffindor"
-            android:layout_width="0dp"
+        <RadioGroup
+            android:id="@+id/rgCasas"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/casa_gryffindor"
-            android:textSize="10sp" />
+            android:orientation="horizontal">
 
-        <RadioButton
-            android:id="@+id/rbSlytherin"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/casa_slytherin"
-            android:textSize="10sp" />
+            <RadioButton
+                android:id="@+id/rbGryffindor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_tab_gryffindor"
+                android:button="@null"
+                android:gravity="center"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:text="🦁 Gryffindor"
+                android:textColor="@color/gryffindor_text"
+                android:textSize="12sp"
+                android:textStyle="bold" />
 
-        <RadioButton
-            android:id="@+id/rbHufflepuff"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/casa_hufflepuff"
-            android:textSize="10sp" />
+            <RadioButton
+                android:id="@+id/rbSlytherin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_tab_slytherin"
+                android:button="@null"
+                android:gravity="center"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:text="🐍 Slytherin"
+                android:textColor="@color/slytherin_text"
+                android:textSize="12sp"
+                android:textStyle="bold" />
 
-        <RadioButton
-            android:id="@+id/rbRavenclaw"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/casa_ravenclaw"
-            android:textSize="10sp" />
-    </RadioGroup>
+            <RadioButton
+                android:id="@+id/rbHufflepuff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_tab_hufflepuff"
+                android:button="@null"
+                android:gravity="center"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:text="🦡 Hufflepuff"
+                android:textColor="@color/hufflepuff_text"
+                android:textSize="12sp"
+                android:textStyle="bold" />
 
+            <RadioButton
+                android:id="@+id/rbRavenclaw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_tab_ravenclaw"
+                android:button="@null"
+                android:gravity="center"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:text="🦅 Ravenclaw"
+                android:textColor="@color/ravenclaw_text"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+        </RadioGroup>
+
+    </HorizontalScrollView>
+
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/bg_card_border"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <!-- ProgressBar -->
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:indeterminateTint="@color/accent_purple"
         android:visibility="gone" />
 
+    <!-- Lista de estudantes -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvEstudantes"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
         android:layout_weight="1"
+        android:layout_marginTop="8dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="16dp"
+        android:clipToPadding="false"
         tools:listitem="@layout/item_estudante" />
 
 </LinearLayout>
